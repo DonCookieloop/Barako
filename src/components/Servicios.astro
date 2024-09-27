@@ -1,0 +1,42 @@
+---
+const servicios = [
+  {
+    titulo: "Destapaciones de cañerías domésticas",
+    descripcion: "Destapacion de bloqueos en cañerías del hogar de manera rápida y sin complicaciones."
+  },
+  {
+    titulo: "Limpieza de desagües comerciales",
+    descripcion: "Manteniniemto programado de desagües comerciales para evitar interrupciones en tu negocio."
+  },
+  {
+    titulo: "Mantenimiento preventivo de sistemas de drenaje",
+    descripcion: "Evita futuros problemas con nuestros servicios de mantenimiento preventivo para sistemas de drenaje."
+  },
+  {
+    titulo: "Inspección con cámara de tuberías",
+    descripcion: "Deteccion de problemas ocultos en tuberías con inspecciónes por cámara."
+  },
+  {
+    titulo: "Destapaciones de emergencia 24/7",
+    descripcion: "Disponibilidad las 24 horas para resolver destapaciones de emergencia, cualquier día del año."
+  },
+  {
+    titulo: "Desagote de inundaciones",
+    descripcion: "Desagote rápido y eficiente para evitar daños mayores en caso de inundaciones."
+  },
+];
+---
+
+<section id="servicios" class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-12">Nuestros Servicios</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {servicios.map(servicio => (
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold mb-4">{servicio.titulo}</h3>
+          <p class="text-gray-600">{servicio.descripcion}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

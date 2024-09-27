@@ -1,0 +1,69 @@
+---
+// src/components/FAQ.astro
+const faqs = [
+  {
+    pregunta: "¿Cuánto tiempo tardan en llegar a una urgencia?",
+    respuesta: "Dependiendo de tu ubicación en CABA, se trata de programar la visita en el mismo dia."
+  },
+  {
+    pregunta: "¿Ofrecen servicios los fines de semana?",
+    respuesta: "Sí, ofrecemos servicio 24/7, incluyendo fines de semana y feriados."
+  },
+  {
+    pregunta: "¿El mantenimiento preventivo incluye inspecciones con cámara?",
+    respuesta: "Sí, nuestras inspecciones preventivas incluyen una revisión detallada con cámara para detectar posibles problemas."
+  },
+  {
+    pregunta: "¿Puedo solicitar una cotización sin compromiso?",
+    respuesta: "Claro, nos puedes contactar y te enviamos una cotización adaptada a tus necesidades sin compromiso."
+  },
+  {
+    pregunta: "¿Cuánto cuesta una desobstrucción de emergencia?",
+    respuesta: "El costo varía según la complejidad del trabajo, pero ofrecemos precios competitivos. Puedes solicitar una cotización rápida por WhatsApp."
+  },
+  {
+    pregunta: "¿Trabajan con empresas o solo con domicilios particulares?",
+    respuesta: "Trabajamos tanto con empresas como con domicilios particulares, locales comerciales e industrias."
+  },
+  {
+    pregunta: "¿Ofrecen algún tipo de garantía en sus trabajos?",
+    respuesta: "Sí, garantizamos la calidad de nuestros trabajos. Si surge algún inconveniente, lo resolvemos sin costo adicional."
+  },
+  {
+    pregunta: "¿Aceptan tarjetas de crédito como forma de pago?",
+    respuesta: "Sí, aceptamos tarjetas de crédito, transferencias bancarias y otros medios de pago ofrecidos por Mercadopago."
+  },
+  {
+    pregunta: "¿Cuánto dura un servicio de mantenimiento preventivo?",
+    respuesta: "Un mantenimiento preventivo regular suele durar entre 1 y 2 horas, dependiendo de la infraestructura."
+  },
+  {
+    pregunta: "¿Ofrecen descuentos por servicios regulares?",
+    respuesta: "Sí, ofrecemos descuentos para clientes con contratos de mantenimiento regular."
+  }
+];
+---
+
+<section id="faq" class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-12">Preguntas Frecuentes</h2>
+    <div class="space-y-4">
+      {faqs.map((faq, index) => (
+        <div class="border border-gray-200 rounded-lg">
+          <button
+            class="flex justify-between items-center w-full p-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors duration-200"
+            onclick={`document.getElementById('faq-answer-${index}').classList.toggle('hidden')`}
+          >
+            <span class="font-semibold">{faq.pregunta}</span>
+            <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div id={`faq-answer-${index}`} class="hidden p-4 bg-white">
+            <p>{faq.respuesta}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
