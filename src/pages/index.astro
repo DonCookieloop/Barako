@@ -4,9 +4,12 @@ import Header from '../components/Header.astro';
 import Welcome from '../components/Welcome.astro';
 import Footer from '../components/Footer.astro';
 
+const title = "Barako Servicios";
+const metaDescription = "Servicios profesionales de destapaciones, Fumigacion y servicios de Plomeria en Capital Federal y Gran Buenos Aires. Soluciones rápidas y efectivas para tus problemas.";
+
 ---
 
-<Main title="Inicio">
+<Main metaDescription={metaDescription}>
     <Header />
     <Welcome />
     <Footer />

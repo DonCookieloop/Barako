@@ -8,9 +8,13 @@ import ServiciosFumigacion from '../components/ServiciosFumigacion.astro';
 import FAQFumigacion from '../components/FAQFumigacion.astro';
 import FormularioContacto from '../components/FormularioContacto.astro';
 import Footer from '../components/Footer.astro';
+
+const title = "Barako Fumigacion";
+const metaDescription = "Barako ofrece servicios profesionales de Fumigacion en Capital Federal y Gran Buenos Aires. Soluciones rápidas y efectivas para tus problemas de Fumigacion.";
+
 ---
 
-<Main title="Inicio">
+<Main title={title} metaDescription={metaDescription}>
     <Header />
     <HeroFumigacion />
     <Arrow />

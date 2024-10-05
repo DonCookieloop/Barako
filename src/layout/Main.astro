@@ -1,6 +1,5 @@
 ---
-// src/layout/Main.astro
-const { title } = Astro.props;
+const { title, metaDescription } = Astro.props; // Added metaDescription prop
 ---
 
 <!DOCTYPE html>
@@ -8,17 +7,46 @@ const { title } = Astro.props;
 <head>
 
     <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-MSLMZS3V');</script>
     <!-- End Google Tag Manager -->
 
+    <meta name="description" content={metaDescription}> <!-- Use dynamic metaDescription -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{title} - Barako Destapaciones</title>
+    <title>{title} Barako Servicios</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon Links -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon"> <!-- For .ico files -->
+    <link rel="icon" href="/favicon.png" type="image/png"> <!-- For .png files, if you have one -->
+    <link rel="apple-touch-icon" href="/favicon.png"> <!-- Optional: For iOS devices -->
+   
+    <!-- Estructura de datos para SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Barako Servicios Destapaciones Fumigacion y Plomeria",
+      "url": "https://www.tusitio.com",
+      "logo": "https://www.barakodestapaciones.com/logo.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+541156552782",
+        "contactType": "Customer Service",
+        "areaServed": "AR",
+        "availableLanguage": "Spanish"
+      },
+      "sameAs": [
+        "https://www.facebook.com/barakoservicios",
+        "https://www.instagram.com/barakoservicios"
+      ]
+    }
+    </script>
+
 </head>
 <body class="font-roboto bg-white text-azul-oscuro">
     <slot />

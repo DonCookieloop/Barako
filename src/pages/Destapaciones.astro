@@ -8,9 +8,13 @@ import Servicios from '../components/ServiciosDestapaciones.astro';
 import FAQdestapaciones from '../components/FAQdestapaciones.astro';
 import FormularioContacto from '../components/FormularioContacto.astro';
 import Footer from '../components/Footer.astro';
+
+const title = "Barako Destapaciones";
+const metaDescription = "Barako ofrece servicios profesionales de destapaciones de cañerias en Capital Federal y Gran Buenos Aires. Soluciones rápidas y efectivas para tus problemas de cañerías.";
+
 ---
 
-<Main title="Inicio">
+<Main title={title} metaDescription={metaDescription}>
     <Header />
     <Hero />
     <Arrow />

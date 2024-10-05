@@ -4,9 +4,13 @@ import Header from '../components/Header.astro';
 import FormularioContacto from '../components/FormularioContacto.astro';
 import Footer from '../components/Footer.astro';
 
+const title = "Barako Contacto";
+const metaDescription = "Como podemos ayudarte?.";
+
+
 ---
 
-<Main title="Inicio">
+<Main title={title} metaDescription={metaDescription}>
     <Header />
     <FormularioContacto />
     <Footer />

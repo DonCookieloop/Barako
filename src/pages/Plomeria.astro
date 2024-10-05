@@ -7,11 +7,17 @@ import ServiciosPlomeria from '../components/ServiciosPlomeria.astro';
 import FAQPlomeria from '../components/FAQPlomeria.astro';
 import FormularioContacto from '../components/FormularioContacto.astro';
 import Footer from '../components/Footer.astro';
+import Arrow from '../components/Arrow.astro';
+
+const title = "Barako Plomeria";
+const metaDescription = "Barako ofrece servicios profesionales de Plomeria en Capital Federal y Gran Buenos Aires. Soluciones rápidas y efectivas para tus problemas de Plomeria.";
+
 ---
 
-<Main title="Inicio">
+<Main title={title} metaDescription={metaDescription}>
     <Header />
     <HeroPlomeria />
+    <Arrow />
     <ServiciosPlomeria />
     <FAQPlomeria />
     <FormularioContacto />
