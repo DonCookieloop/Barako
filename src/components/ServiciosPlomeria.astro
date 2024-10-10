@@ -1,40 +1,75 @@
 ---
-const servicios = [
+interface Servicio {
+  titulo: string;
+  descripcion: string[];
+}
+
+const servicios: Servicio[] = [
   {
-    titulo: "Destapaciones de cañerías domésticas",
-    descripcion: "Destapacion de bloqueos en cañerías del hogar de manera rápida y sin complicaciones."
+    titulo: "Plomería en Capital Federal",
+    descripcion: [
+      "Ofrecemos servicios de plomería en toda la ciudad de Buenos Aires, atendiendo necesidades de reparaciones y mantenimiento.",
+      "Desde filtraciones hasta instalaciones, nuestros plomeros están capacitados para resolver cualquier inconveniente.",
+      "Disfruta de un servicio rápido y profesional para tu hogar o negocio.",
+    ]
   },
   {
-    titulo: "Limpieza de desagües comerciales",
-    descripcion: "Mantenimiento programado de desagües comerciales para evitar interrupciones en tu negocio."
+    titulo: "Plomero a Domicilio en Capital Federal",
+    descripcion: [
+      "¿Necesitás un plomero cerca de tu ubicación? Nuestro servicio a domicilio está disponible en toda la ciudad.",
+      "Realizamos reparaciones de cañerías, instalación de grifería, y más, en el momento que lo necesites.",
+      "Nuestra prioridad es ofrecerte un servicio de calidad a tus problemas de plomería.",
+    ]
   },
   {
-    titulo: "Mantenimiento preventivo de sistemas de drenaje",
-    descripcion: "Evita futuros problemas con nuestros servicios de mantenimiento preventivo para sistemas de drenaje."
+    titulo: "Destapación de Cañerías y Desagües en Capital Federal",
+    descripcion: [
+      "¿Cañerías obstruidas? Contamos con un servicio profesional de destapaciones para hogares y comercios.",
+      "Utilizamos técnicas avanzadas y equipos adecuados para resolver bloqueos en cañerías de baño, cocina y desagües pluviales.",
+      "Recuperá el flujo normal de tus instalaciones sin complicaciones.",
+      "Llama ahora para programar tu servicio de destapación."
+    ]
   },
   {
-    titulo: "Inspección con cámara de tuberías",
-    descripcion: "Deteccion de problemas ocultos en tuberías con inspecciónes por cámara."
+    titulo: "Mantenimiento Preventivo de Plomería en Capital Federal",
+    descripcion: [
+      "Evita emergencias futuras con nuestro servicio de mantenimiento preventivo de plomería.",
+      "Realizamos inspecciones periódicas de cañerías, grifería y sistemas sanitarios para detectar problemas antes de que ocurran.",
+      "Un mantenimiento regular es clave para asegurar el buen funcionamiento de tus instalaciones.",
+    ]
   },
   {
-    titulo: "Destapaciones de emergencia 24/7",
-    descripcion: "Disponibilidad las 24 horas para resolver destapaciones de emergencia, cualquier día del año."
+    titulo: "Plomero de Urgencia en Capital Federal",
+    descripcion: [
+      "Atendemos urgencias de plomería en comercios y hogares de manera rápida y eficiente.",
+      "Desde fugas hasta problemas con inodoros, nuestro equipo está listo para resolver tus inconvenientes.",
+      "Ofrecemos un servicio que minimiza el impacto en tu rutina diaria o en tus operaciones comerciales.",
+    ]
   },
   {
-    titulo: "Desagote de inundaciones",
-    descripcion: "Desagote rápido y eficiente para evitar daños mayores en caso de inundaciones."
-  },
+    titulo: "Instalación de Sanitarios y Grifería en Capital Federal",
+    descripcion: [
+      "Especialistas en la instalación de sanitarios, grifería y accesorios de plomería en tu hogar o negocio.",
+      "Garantizamos un trabajo profesional y con los mejores materiales del mercado.",
+      "Nuestro equipo se encargará de cada detalle, asegurando que todo funcione perfectamente.",
+    ]
+  }
 ];
+
+
 ---
+
 
 <section id="servicios" class="bg-white md:pt-16">
   <div class="container mx-auto px-4">
     <h2 class="text-3xl font-bold text-center mb-12">Nuestros Servicios</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {servicios.map(servicio => (
+      {servicios.map((servicio) => (
         <div class="bg-white p-6 rounded-lg shadow-md">
           <h3 class="text-xl font-semibold mb-4">{servicio.titulo}</h3>
-          <p class="text-gray-600">{servicio.descripcion}</p>
+          {servicio.descripcion.map((parrafo, index) => (
+            <p key={index} class="text-gray-600 mb-2">{parrafo}</p>
+          ))}
         </div>
       ))}
     </div>

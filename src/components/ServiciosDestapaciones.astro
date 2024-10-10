@@ -1,40 +1,77 @@
 ---
-const servicios = [
+interface Servicio {
+  titulo: string;
+  descripcion: string[];
+}
+
+const servicios: Servicio[] = [
   {
-    titulo: "Destapaciones de cañerías a Domicilio",
-    descripcion: "Destapacion de bloqueos en cañerías - Baños - Cocinas - Inodoros - Cloacas - Patios - Terrazas - Desagues - Lavaderos - Pluviales - Rejillas - Tuberias."
+    titulo: "Destapaciones Cloacales Urgentes en Capital Federal",
+    descripcion: [
+      "Atendemos urgencias 24/7 en toda la ciudad de Buenos Aires.",
+      "Si tu cloaca está bloqueada, estamos listos para intervenir de inmediato y solucionar el problema en tiempo récord.",
+      "¡No dejes que una obstrucción arruine tu día!",
+      "Llama ahora para asistencia rápida y garantizada."
+    ]
   },
   {
-    titulo: "Limpieza de desagües comerciales",
-    descripcion: "Mantenimiento programado de desagües comerciales para evitar interrupciones en tu negocio."
+    titulo: "Desbloqueo de Cañerías Domésticas y Comerciales",
+    descripcion: [
+      "Solucionamos cualquier obstrucción en cañerías en casas, departamentos o locales comerciales.",
+      "Utilizamos herramientas avanzadas para asegurar un flujo óptimo y prevenir futuros problemas.",
+      "Brindamos un servicio rápido y profesional en toda Capital Federal.",
+      "Contáctanos hoy y recupera la tranquilidad en tu hogar o negocio."
+    ]
   },
   {
-    titulo: "Mantenimiento preventivo de sistemas de drenaje",
-    descripcion: "Evita futuros problemas con nuestros servicios de mantenimiento preventivo para sistemas de drenaje."
+    titulo: "Mantenimiento Preventivo de Cloacas y Cañerías",
+    descripcion: [
+      "Evita problemas mayores con nuestro servicio de mantenimiento preventivo.",
+      "Realizamos inspecciones periódicas para asegurar que todo funcione correctamente.",
+      "Prevenir obstrucciones puede ahorrarte costosas reparaciones en el futuro.",
+      "Ahorra tiempo y dinero con nuestro servicio preventivo."
+    ]
   },
   {
-    titulo: "Inspección con cámara de cañerias",
-    descripcion: "Deteccion de problemas ocultos en cañerias con inspecciónes por cámara."
+    titulo: "Destapaciones Pluviales y Cloacales en Barrios de Capital Federal",
+    descripcion: [
+      "Realizamos destapaciones de desagües pluviales y cloacales en barrios como Palermo, Recoleta Belgrano, etc.",
+      "Garantizamos un servicio rápido y eficaz para que el sistema de desagüe funcione a la perfección.",
+      "Agenda tu servicio hoy mismo y evita problemas mayores."
+    ]
   },
   {
-    titulo: "Destapaciones de emergencia 24/7",
-    descripcion: "Disponibilidad las 24 horas para resolver destapaciones de cañerias pluviales y cloacales de emergencia a domicilio, cualquier día del año."
+    titulo: "Servicio Profesional de Destapaciones de Desagües",
+    descripcion: [
+      "Destapamos desagües en consorcios, edificios y viviendas particulares.",
+      "Ofrecemos soluciones para todo tipo de cañerías.",
+      "Nuestro equipo especializado está disponible en toda CABA.",
+      "Llámanos hoy mismo y soluciona tu problema en cuestión de horas."
+    ]
   },
   {
-    titulo: "Destapaciones con Maquina",
-    descripcion: "Destapaciones con equipos de ultima tecnologia, maquinas con motor de 1HP de Potencia."
-  },
+    titulo: "Destapaciones Urgentes para Empresas y Comercios",
+    descripcion: [
+      "Soluciones rápidas para locales comerciales, oficinas y empresas.",
+      "Atendemos urgencias para que tu negocio siga operando sin interrupciones.",
+      "Solucionamos bloqueos de forma eficiente y discreta.",
+      "Llamanos y agenda una visita."
+    ]
+  }
 ];
+
 ---
 
 <section id="servicios" class="bg-white md:pt-16">
   <div class="container mx-auto px-4">
-    <h2 class="text-3xl font-bold text-center mb-12">Servicio de Destapaciones</h2>
+    <h2 class="text-3xl font-bold text-center mb-12">Nuestros Servicios</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {servicios.map(servicio => (
+      {servicios.map((servicio) => (
         <div class="bg-white p-6 rounded-lg shadow-md">
           <h3 class="text-xl font-semibold mb-4">{servicio.titulo}</h3>
-          <p class="text-gray-600">{servicio.descripcion}</p>
+          {servicio.descripcion.map((parrafo, index) => (
+            <p key={index} class="text-gray-600 mb-2">{parrafo}</p>
+          ))}
         </div>
       ))}
     </div>

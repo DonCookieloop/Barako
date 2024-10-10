@@ -1,29 +1,69 @@
 ---
-const servicios = [
+interface Servicio {
+  titulo: string;
+  descripcion: string[];
+}
+
+const servicios: Servicio[] = [
   {
-    titulo: "Destapaciones de cañerías domésticas",
-    descripcion: "Destapacion de bloqueos en cañerías del hogar de manera rápida y sin complicaciones."
+    titulo: "Control de plagas en hogares",
+    descripcion: [
+      "Servicio de fumigación en casas para eliminar plagas de forma segura.",
+      "¿Necesitás fumigación en tu hogar?",
+      " Nuestro servicio de control de plagas en casas te protege de cucarachas, hormigas, arañas, roedores, murcielagos, chinches, polillas, termitas.",
+      " Utilizamos productos seguros para eliminar rápidamente cualquier infestación.",
+      "Garantizamos una fumigación efectiva que respeta el bienestar de tu familia.",
+      "¡Solicitá tu fumigación de plagas domésticas hoy y mantené tu hogar libre de plagas!"
+    ]
   },
   {
-    titulo: "Limpieza de desagües comerciales",
-    descripcion: "Mantenimiento programado de desagües comerciales para evitar interrupciones en tu negocio."
+    titulo: "Fumigación comercial",
+    descripcion: [
+      "Fumigación profesional para negocios y oficinas.",
+      "¿Tu empresa necesita un servicio de fumigación para negocios?",
+      " Nuestro equipo está especializado en el control de plagas en restaurantes, oficinas y todo tipo de comercios.",
+      "Sabemos lo importante que es mantener un ambiente limpio y seguro para clientes y empleados.",
+      " Garantizamos resultados rápidos y efectivos con nuestros servicios de control de plagas comerciales."
+    ]
   },
   {
-    titulo: "Mantenimiento preventivo de sistemas de drenaje",
-    descripcion: "Evita futuros problemas con nuestros servicios de mantenimiento preventivo para sistemas de drenaje."
+    titulo: "Control de insectos voladores",
+    descripcion: [
+      "Eliminá mosquitos jejenes y avispas con nuestro servicio especializado.",
+      "No dejes que los mosquitos o las avispas invadan tus espacios.",
+      "Con nuestro servicio de fumigación para mosquitos y avispas, mantenemos tus interiores y exteriores libres de plagas voladoras.",
+      "Utilizamos productos seguros y efectivos para eliminar estas plagas rápidamente.",
+      "Control de insectos voladores sin riesgo para tu familia ni tus mascotas."
+    ]
   },
   {
-    titulo: "Inspección con cámara de tuberías",
-    descripcion: "Deteccion de problemas ocultos en tuberías con inspecciónes por cámara."
+    titulo: "Control de plagas industriales",
+    descripcion: [
+      "Fumigación y desratizacion industrial para proteger fábricas y almacenes.",
+      "¿Estás buscando un servicio de control de plagas para industrias?",
+      "Nuestro equipo especializado en fumigación industrial protege fábricas, almacenes y grandes instalaciones contra plagas como roedores, cucarachas y termitas.",
+      "Mantené tu espacio industrial seguro y conforme a las normativas sanitarias con nuestra fumigación para fábricas y almacenes."
+    ]
   },
   {
-    titulo: "Destapaciones de emergencia 24/7",
-    descripcion: "Disponibilidad las 24 horas para resolver destapaciones de emergencia, cualquier día del año."
+    titulo: "Fumigación preventiva",
+    descripcion: [
+      "Servicio de fumigación preventiva para evitar plagas.",
+      "Prevení infestaciones antes de que comiencen con nuestro servicio de fumigación preventiva.",
+      "Realizamos inspecciones y tratamientos periódicos para garantizar que tu hogar o negocio esté libre de plagas todo el año.",
+      "Un plan de control de plagas preventivo es la mejor manera de evitar problemas a largo plazo."
+    ]
   },
   {
-    titulo: "Desagote de inundaciones",
-    descripcion: "Desagote rápido y eficiente para evitar daños mayores en caso de inundaciones."
-  },
+    titulo: "Fumigación de espacios verdes",
+    descripcion: [
+      "Control de plagas en jardines y áreas exteriores.",
+      "Los insectos y plagas pueden afectar gravemente tus espacios verdes.",
+      "Con nuestro servicio de control de plagas en jardines, eliminamos hormigas, pulgones y mosquitos sin dañar tu vegetación.",
+      "Utilizamos productos ecológicos para proteger tus áreas exteriores.",
+      "Fumigación de jardines profesional para mantener tus espacios verdes saludables."
+    ]
+  }
 ];
 ---
 
@@ -31,10 +71,12 @@ const servicios = [
   <div class="container mx-auto px-4">
     <h2 class="text-3xl font-bold text-center mb-12">Nuestros Servicios</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {servicios.map(servicio => (
+      {servicios.map((servicio) => (
         <div class="bg-white p-6 rounded-lg shadow-md">
           <h3 class="text-xl font-semibold mb-4">{servicio.titulo}</h3>
-          <p class="text-gray-600">{servicio.descripcion}</p>
+          {servicio.descripcion.map((parrafo, index) => (
+            <p key={index} class="text-gray-600 mb-2">{parrafo}</p>
+          ))}
         </div>
       ))}
     </div>
